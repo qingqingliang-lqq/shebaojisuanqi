@@ -165,10 +165,47 @@ npm start
 
 ### 部署到 Vercel
 
-1. 将项目推送到 GitHub
-2. 在 [Vercel](https://vercel.com) 导入项目
-3. 配置环境变量（SUPABASE_URL 和 SUPABASE_ANON_KEY）
-4. 点击 Deploy
+1. **访问 Vercel**: 登录 [Vercel Dashboard](https://vercel.com/new)
+
+2. **导入项目**:
+   - 选择 "Import Git Repository"
+   - 输入你的仓库地址: `https://github.com/qingqingliang-lqq/shebaojisuanqi`
+   - 点击 "Import"
+
+3. **⚠️ 重要：配置环境变量**（必须步骤）:
+
+   在项目配置页面的 "Environment Variables" 部分添加以下环境变量：
+
+   ```
+   Name: SUPABASE_URL
+   Value: https://haywyrzfviwohjxiuxry.supabase.co
+
+   Name: SUPABASE_ANON_KEY
+   Value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhheXd5cnpmdml3b2hqeGl1eHJ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc0OTA3NTksImV4cCI6MjA4MzA2Njc1OX0.BiKphVmclI6xfWhKYdfAd-WnwCD7eIXa5C8v6J6FjNk
+   ```
+
+   **注意**：
+   - 环境变量区分大小写
+   - 不要添加引号
+   - 必须在部署前配置，否则构建会失败
+
+4. **部署**:
+   - 点击 "Deploy" 按钮
+   - 等待部署完成（约 1-2 分钟）
+   - 部署成功后会获得一个 `.vercel.app` 域名
+
+5. **验证**:
+   - 访问部署的网址
+   - 测试上传和计算功能
+
+### 更新环境变量
+
+如果以后需要更新 Supabase 配置：
+
+1. 进入 Vercel 项目的 **Settings**
+2. 选择 **Environment Variables**
+3. 修改变量值
+4. 点击 **Save** 后重新部署
 
 ## 注意事项
 
